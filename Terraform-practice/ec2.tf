@@ -17,11 +17,12 @@ resource "aws_instance" "devops_instance_1" {
     systemctl enable docker
     systemctl start docker
     usermod -aG docker ubuntu
-        docker pull ghcr.io/31-santhosh/project-cloud-devops:latest
-        docker run -d \
-      --name frontend \
-      --restart unless-stopped \ 
-      -p 80:80 \
+docker pull ghcr.io/31-santhosh/project-cloud-devops:latest
+docker run -d \
+  --name frontend \
+  --restart unless-stopped \
+  -p 80:80 \
+  ghcr.io/31-santhosh/project-cloud-devops:latest
       ghcr.io/31-santhosh/project-cloud-devops:latest
   EOF
 
@@ -49,12 +50,12 @@ resource "aws_instance" "devops_instance_2" {
     systemctl enable docker
     systemctl start docker
     usermod -aG docker ubuntu
-    docker pull ghcr.io/31-santhosh/project-cloud-devops:latest
-        docker run -d \
-      --name frontend \
-      --restart unless-stopped \ 
-      -p 80:80 \
-      ghcr.io/31-santhosh/project-cloud-devops:latest
+docker pull ghcr.io/31-santhosh/project-cloud-devops:latest
+docker run -d \
+  --name frontend \
+  --restart unless-stopped \
+  -p 80:80 \
+  ghcr.io/31-santhosh/project-cloud-devops:latest
   EOF
 
   tags = {
